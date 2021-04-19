@@ -1,0 +1,83 @@
+<!doctype html>
+<head>
+<title>SignUp</title>
+<link href="css/style1.css" rel="stylesheet">
+<script>
+    function valid(){
+        var user = document.getElementById("fn").value
+        var reg = /^[A-Za-z]+$/
+        var res = reg.test(user)
+        if(res){                
+            var user = document.getElementById("ln").value
+            var reg2 = /^[A-Za-z]+$/
+            var res2 = reg2.test(user)
+            if(res2){                
+                var co = document.getElementById("co").value
+                var reg3 = /^[0-9]{10}$/
+                var res3 = reg3.test(co)
+                if(res3){
+                    var em = document.getElementById("em").value
+                    var cem = document.getElementById("cem").value
+                    if(em==cem){
+                        var pass = document.getElementById("pw").value
+                        var reg = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/
+                        if(pass.match(reg)){
+                            var pass = document.getElementById("pw").value
+                            var cpass = document.getElementById("cpw").value
+                            if(pass==cpass){
+                                alert("Signin Successful")
+                                return true
+                            }
+                            else{
+                                alert("password not matched")
+                                return false
+                            }
+                        
+                        }
+                        else{
+                            alert("password should contain 7 to 15 character which contains atleast one no. and a special character")
+                            return false
+                        }
+                                                
+                    }
+                    else{
+                        alert("Email not matched")
+                        return false
+                    }
+                }
+                else{
+                    alert("contact should contait number only and size should be 10")
+                    return false
+                }
+            }
+            else{
+                alert("lastname should consist with letters only")
+                return false
+            }
+        }
+        else{
+            alert("firstname should consist with letters only")
+            return false
+        }
+        
+          
+}
+</script>
+</head>
+<body>
+<h1 align="center" style="color:chartreuse">SignUp</h1>
+<form action="indax.html" onsubmit="return valid()">
+    First Name:<input type="text" placeholder="FirstName" id="fn" required></td>&nbsp;&nbsp;
+    Last Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="LastName" id="ln" required></br></br>
+    Contact:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" placeholder="phone number" id="co" required>&nbsp;&nbsp;
+    DOB:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" required></br></br>
+    Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="Email" id="em" required>&nbsp;
+    Confirm Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" placeholder="Email" id="cem" required></br></br>
+    password:&nbsp;&nbsp;<input type="password" placeholder="Password" id="pw" required>&nbsp;
+    Confirm Password:<input type="password" placeholder="Password" id="cpw" required></br></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="submit">
+</form>
+</body>

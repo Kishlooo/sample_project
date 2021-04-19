@@ -1,0 +1,22 @@
+body{
+background-color:gray;
+color:white;
+}
+h1{
+font-family:Chiller;	
+font-size:84px;	
+}
+p{
+border:3px solid green;
+border-color:lightblue; 
+background-color:black;
+border-radius:30px;
+
+margin-left:300px;
+margin-right:300px;
+
+padding-left:20px;
+padding-right:20px;
+padding-top:10px;
+padding-bottom:10px;
+}

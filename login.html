@@ -1,0 +1,40 @@
+<!doctype html>
+<head>
+<title>Login</title>
+<link href="css/style2.css" rel="stylesheet">
+<script>
+    function valid(){
+            var user = document.getElementById("un").value
+            var reg = /^[A-Za-z]+$/
+            var res = reg.test(user)
+            if(res){                
+                var pass = document.getElementById("pw").value
+                var reg2 = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/
+                if(!pass.match(reg2)){
+                    alert("password should contain 7 to 15 character which contains atleast one no. and a special character")
+                    return false
+                }
+                else{
+                    alert("accepted")
+                    return true
+                }
+                return true
+            }
+            else{
+                alert("username should consist with letters only")
+                return false
+            }
+            
+              
+    }
+</script>
+</head>
+<body>
+<h1>Login</h1>
+<form action="indax.html" onsubmit="return valid()">  
+    Username : <input type="text" placeholder="enter username" id="un"></br></br>
+    Password : <input type="password" placeholder="enter password" id="pw"></br></br>
+    <input type="submit">
+</form>
+
+</body>

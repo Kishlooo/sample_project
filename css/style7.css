@@ -1,0 +1,19 @@
+body{
+background-color:gray;	
+}
+h1{
+color:white;
+animation:h1;
+animation-duration:12s;
+animation-iteration-count:infinite;
+}
+@keyframes h1{
+0%{background-color:pink;}
+10%{background-color:orange;}
+20%{background-color:yellow;}
+30%{background-color:cyan;}
+40%{background-color:green;}
+50%{background-color:#D08A7D;}
+60%{background-color:#B0D833 ;}
+70%{background-color:#E90F6B;}
+}
